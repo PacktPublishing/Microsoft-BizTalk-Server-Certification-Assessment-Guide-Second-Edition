@@ -1,0 +1,6 @@
+<ns0:RegistrationDetails xmlns:ns0="http://Chapter03_Example01_Schemas.CarRegistry">
+  <Affiliations Name="Felix" Type="Owner">
+  </Affiliations>
+  <Affiliations Name="Felix" Type="User">
+  </Affiliations>
+</ns0:RegistrationDetails>

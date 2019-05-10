@@ -1,0 +1,195 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="682c350b-4070-47bf-8072-aa85053b778f" LowerBound="1.1" HigherBound="42.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Example01_Deployment" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="d83f4093-0708-4f95-8ad4-38414714a7c6" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MBWRecallPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="461e9a61-622d-4821-800a-ccc95e9c866d" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MBWRecall" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="6bef5bd0-f296-4df4-934b-186e5b4b692f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.22">
+                    <om:Property Name="Ref" Value="Example01_Deployment.MBWRecall" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="9219329e-6851-45fd-8dc3-9a65cc14c421" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="HWLCPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="1d7e37ae-762c-48c9-9ee6-4cd7a60c1ab5" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="HWLCRecall" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="a24787de-5ba6-4eaa-9d5e-f3f9c3d60d1f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.23">
+                    <om:Property Name="Ref" Value="Example01_Deployment.HWLCRecall" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="763e544b-4817-4a5a-8c73-1add9c609e96" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="41.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessPartRecall" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="ServiceBody" OID="c966d8ac-654b-4422-aa70-b43afb6ea0b6" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="2d21bf66-233e-47d2-b92a-5a137aca6983" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="MBWRecallIN" />
+                    <om:Property Name="MessageName" Value="msgMBWRecall" />
+                    <om:Property Name="OperationName" Value="MBWRecall" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvMBWRecall" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="0d10510e-fc74-4b59-82c7-592c6ccf1254" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="37.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructHWLCRecall" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="a88085a0-af6e-4b09-9abd-ce27084d8891" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="36.1">
+                        <om:Property Name="ClassName" Value="Example01_Deployment.MBWRecall_to_HWLCRecall" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="TxMBWRecall" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="c6ac7dac-052d-4cb3-b52e-1cb4f63c7626" ParentLink="Transform_InputMessagePartRef" LowerBound="35.91" HigherBound="35.103">
+                            <om:Property Name="MessageRef" Value="msgMBWRecall" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="f71a3295-b8f8-4ce3-adbd-0e6846beb29a" ParentLink="Transform_OutputMessagePartRef" LowerBound="35.28" HigherBound="35.41">
+                            <om:Property Name="MessageRef" Value="msgHWLCRecall" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="6f4c8bc5-f4dc-4f20-bdbe-e3e3ba968fe3" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.36">
+                        <om:Property Name="Ref" Value="msgHWLCRecall" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="f54284a2-300d-4d2c-9f57-3d6fc91d38be" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                    <om:Property Name="PortName" Value="HWLCRecallOUT" />
+                    <om:Property Name="MessageName" Value="msgHWLCRecall" />
+                    <om:Property Name="OperationName" Value="HWLCRecall" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SndHWLCRecall" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="d279b238-0660-437b-8f7d-64104412f46e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="5" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Example01_Deployment.MBWRecallPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MBWRecallIN" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="db8ff4de-088e-4ef7-8741-6e054605fe66" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="f616aa27-082b-45a4-a300-1f44c8884db8" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Example01_Deployment.HWLCPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="HWLCRecallOUT" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="9e60d74d-a228-475b-beeb-cf93b8ce2b2d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="8277dbbd-a533-43e9-a205-d77f2d12e839" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Example01_Deployment.MBWRecall" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgMBWRecall" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="cea4d6b5-1cd0-4e09-857e-a0e41aadcd07" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Example01_Deployment.HWLCRecall" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgHWLCRecall" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Example01_Deployment
+{
+    internal porttype MBWRecallPortType
+    {
+        oneway MBWRecall
+        {
+            MBWRecall
+        };
+    };
+    internal porttype HWLCPortType
+    {
+        oneway HWLCRecall
+        {
+            HWLCRecall
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessPartRecall
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements MBWRecallPortType MBWRecallIN;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses HWLCPortType HWLCRecallOUT;
+        message MBWRecall msgMBWRecall;
+        message HWLCRecall msgHWLCRecall;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2d21bf66-233e-47d2-b92a-5a137aca6983")]
+            activate receive (MBWRecallIN.MBWRecall, msgMBWRecall);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0d10510e-fc74-4b59-82c7-592c6ccf1254")]
+            construct msgHWLCRecall
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("a88085a0-af6e-4b09-9abd-ce27084d8891")]
+                transform (msgHWLCRecall) = Example01_Deployment.MBWRecall_to_HWLCRecall (msgMBWRecall);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f54284a2-300d-4d2c-9f57-3d6fc91d38be")]
+            send (HWLCRecallOUT.HWLCRecall, msgHWLCRecall);
+        }
+    }
+}
+

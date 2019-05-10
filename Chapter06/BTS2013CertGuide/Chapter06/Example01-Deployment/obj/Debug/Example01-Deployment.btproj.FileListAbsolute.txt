@@ -1,0 +1,8 @@
+C:\BTS2010CertGuide\Chapter06\Example01-Deployment\bin\Debug\Example01-Deployment.dll
+C:\BTS2010CertGuide\Chapter06\Example01-Deployment\bin\Debug\Example01-Deployment.pdb
+C:\BTS2010CertGuide\Chapter06\Example01-Deployment\obj\Debug\Example01-Deployment.dll
+C:\BTS2010CertGuide\Chapter06\Example01-Deployment\obj\Debug\Example01-Deployment.pdb
+C:\BTS2013CertGuide\Chapter06\Example01-Deployment\bin\Debug\Example01-Deployment.dll
+C:\BTS2013CertGuide\Chapter06\Example01-Deployment\bin\Debug\Example01-Deployment.pdb
+C:\BTS2013CertGuide\Chapter06\Example01-Deployment\obj\Debug\Example01-Deployment.dll
+C:\BTS2013CertGuide\Chapter06\Example01-Deployment\obj\Debug\Example01-Deployment.pdb

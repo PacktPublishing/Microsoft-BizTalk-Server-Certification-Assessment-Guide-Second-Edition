@@ -1,0 +1,16 @@
+<ns0:ManufacturingReport BatchNo="10" xmlns:ns0="http://Chapter02_Example03.Schemas.CarEnvelope">
+  <Cars>
+    <ns0:Car xmlns:ns0="http://Chapter02_Example03.Schemas.SimplifiedCar">
+      <RegistrationNo>ABC123</RegistrationNo>
+      <Make>Audi</Make>
+      <Model>RS6</Model>
+      <Color>NurburgringBlue</Color>
+    </ns0:Car>
+    <ns0:Car xmlns:ns0="http://Chapter02_Example03.Schemas.SimplifiedCar">
+      <RegistrationNo>XYZ789</RegistrationNo>
+      <Make>Corvette</Make>
+      <Model>ZR1</Model>
+      <Color>DaytonaRed</Color>
+    </ns0:Car>
+  </Cars>
+</ns0:ManufacturingReport>

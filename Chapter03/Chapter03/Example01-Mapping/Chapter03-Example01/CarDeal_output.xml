@@ -1,0 +1,3 @@
+<ns0:DealDetails xmlns:ns0="http://Chapter03_Example01_Schemas.CarDeal">
+  <Buyer Name="Felix" />
+</ns0:DealDetails>

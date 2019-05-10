@@ -1,0 +1,9 @@
+<ns0:Cars xmlns:ns0="http://Chapter03_Example01_Schemas.CarBrands2">
+  <Car License="License_0" Brand="Audi" />
+  <Car License="License_1" Brand="Volvo" />
+  <Car License="License_2" Brand="Ford" />
+  <Car License="License_3" Brand="Volvo" />
+  <Car License="License_4" Brand="Audi" />
+  <Car License="License_5" Brand="Audi" />
+  <Car License="License_6" Brand="Ford" />
+</ns0:Cars>

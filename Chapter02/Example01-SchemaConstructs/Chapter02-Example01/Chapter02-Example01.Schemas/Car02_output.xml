@@ -1,0 +1,6 @@
+<ns0:Car xmlns:ns0="http://Chapter02_Example01.Schemas.Car">
+  <DateManufactured>1999-05-31</DateManufactured>
+  <DateRegistered>1999-05-31</DateRegistered>
+  <RegistrationNo>RegistrationNo_0</RegistrationNo>
+  <PassengerCapacity>10</PassengerCapacity>
+</ns0:Car>

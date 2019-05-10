@@ -1,0 +1,75 @@
+#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="278efc57-f51d-4fb1-90b4-344d3c02f3ee" LowerBound="1.1" HigherBound="17.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Chapter04_Example01.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="c2c2be33-5cff-49b3-a9bc-5901ae2e5476" ParentLink="Module_ServiceDeclaration" LowerBound="4.1" HigherBound="16.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="DirectPartnerInverseReceiver1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="aa64be7f-ff0a-44d8-a904-01735b638cd1" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="9.1" HigherBound="10.1">
+                <om:Property Name="Type" Value="Chapter04_Example01.Orchestrations.SalesOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Message_1" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="26905dd4-53c6-4422-84b3-f778d877ec75" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="4ca3ef0b-473f-455c-8657-011c1a107025" ParentLink="ServiceBody_Statement" LowerBound="12.1" HigherBound="14.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveFromSenderInversePartnerPort" />
+                    <om:Property Name="MessageName" Value="Message_1" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="f1a13621-0560-4b3f-947f-8ba51c6ec648" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="7.1" HigherBound="9.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Chapter04_Example01.Orchestrations.InversePartnerPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveFromSenderInversePartnerPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="88026fef-39ea-45f4-817d-a72b0affcecb" ParentLink="PortDeclaration_CLRAttribute" LowerBound="7.1" HigherBound="8.1">
+                    <om:Property Name="PartnerPort" Value="SendToReceiversInversePartnerPort" />
+                    <om:Property Name="PartnerService" Value="Chapter04_Example01.Orchestrations.DirectPartnerInverseSender" />
+                    <om:Property Name="DirectBindingType" Value="PartnerPort" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Chapter04_Example01.Orchestrations
+{
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service DirectPartnerInverseReceiver1
+    {
+        [Microsoft.XLANGs.BaseTypes.DirectBinding(typeof(Chapter04_Example01.Orchestrations.DirectPartnerInverseSender), "SendToReceiversInversePartnerPort")]
+        port implements InversePartnerPortType ReceiveFromSenderInversePartnerPort;
+        message SalesOrder Message_1;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4ca3ef0b-473f-455c-8657-011c1a107025")]
+            activate receive (ReceiveFromSenderInversePartnerPort.Operation_1, Message_1);
+        }
+    }
+}
+

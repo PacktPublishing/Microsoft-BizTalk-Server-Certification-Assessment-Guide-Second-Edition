@@ -1,0 +1,322 @@
+#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="296ba908-5e73-449c-b2d4-347bd1238513" LowerBound="1.1" HigherBound="75.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Chapter05_Example01.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="adb8c34f-56df-479c-94f0-c0642442bdbb" ParentLink="Module_ServiceDeclaration" LowerBound="11.1" HigherBound="74.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ThrowCatchCompensate4" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="LongRunningTransaction" OID="3be3628b-0f99-4044-9ebc-20f62b64a52a" ParentLink="ServiceDeclaration_Transaction" LowerBound="12.21" HigherBound="12.67">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="3e33fb3b-afce-4a7d-b0d5-2bda9c13abb3" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="24.1" HigherBound="25.1">
+                <om:Property Name="Type" Value="Chapter05_Example01.Schemas.SimplifiedCar" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CarIn" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="41c7c403-6d8e-40e5-93d0-28331633bc0d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Chapter05_Example01.Schemas.SimplifiedCar" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CarOut" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="e3a92056-f391-4735-878f-aa04e49024f6" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="3e8cea66-6135-438f-ad79-c9f9fbc25f52" ParentLink="ServiceBody_Statement" LowerBound="28.1" HigherBound="30.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="CarReceive" />
+                    <om:Property Name="MessageName" Value="CarIn" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveCar" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="6f6c6aa3-2668-4669-98d9-febed6189506" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="72.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="LongRunningScope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="LongRunningTransaction" OID="88a4a6b8-85b8-4d96-8eaa-13c35198a56c" ParentLink="Scope_Transaction" LowerBound="31.18" HigherBound="31.56">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transaction_3" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Scope" OID="5c6486e0-ecf7-4411-aef9-392cb012d76e" ParentLink="ComplexStatement_Statement" LowerBound="35.1" HigherBound="51.1">
+                        <om:Property Name="InitializedTransactionType" Value="True" />
+                        <om:Property Name="IsSynchronized" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="AtomicScope" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="AtomicTransaction" OID="6229f8ae-ece0-4741-9a90-400326aec2d1" ParentLink="Scope_Transaction" LowerBound="37.26" HigherBound="37.59">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transaction_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Send" OID="b8737be1-6421-40af-b6b9-71da617573cd" ParentLink="ComplexStatement_Statement" LowerBound="41.1" HigherBound="43.1">
+                            <om:Property Name="PortName" Value="ShipNoticeSend" />
+                            <om:Property Name="MessageName" Value="CarIn" />
+                            <om:Property Name="OperationName" Value="Operation_1" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="SendShipNotice" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="TransactionAttribute" OID="ab64eb72-dd5e-4096-9d01-234cd03ca1c2" ParentLink="Statement_CLRAttribute" LowerBound="36.1" HigherBound="37.1">
+                            <om:Property Name="Batch" Value="True" />
+                            <om:Property Name="Retry" Value="True" />
+                            <om:Property Name="Timeout" Value="60" />
+                            <om:Property Name="Isolation" Value="Serializable" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Compensation" OID="bd3ce10d-3461-4895-897a-97c49526e3a9" ParentLink="Scope_Compensation" LowerBound="44.1" HigherBound="50.1">
+                            <om:Property Name="IsCustom" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="CompensateShipNotice" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Send" OID="02f898ba-7c60-49dd-8696-a1f7e01d2af2" ParentLink="Compensation_Statement" LowerBound="47.1" HigherBound="49.1">
+                                <om:Property Name="PortName" Value="ShipNoticeRetract" />
+                                <om:Property Name="MessageName" Value="CarIn" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="RestractShipNotice" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="62a49434-c165-4703-86d1-a2fa5d79b72f" ParentLink="ComplexStatement_Statement" LowerBound="51.1" HigherBound="59.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct_CarOut" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="3a6bf0f9-b485-4041-b343-7e303008124b" ParentLink="ComplexStatement_Statement" LowerBound="54.1" HigherBound="58.1">
+                            <om:Property Name="Expression" Value="CarOut = CarIn;&#xD;&#xA;CarOut.OperationalRange = Chapter05_Example01.HelperLibrary.CodeHelper.CalculateOperationalRange(CarIn.FuelTankCapacity, CarIn.FuelConsumption);&#xD;&#xA;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="Assign_CarOut" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="f94cdb38-5ad0-4bd5-8ee9-de0f769cf19a" ParentLink="Construct_MessageRef" LowerBound="52.31" HigherBound="52.37">
+                            <om:Property Name="Ref" Value="CarOut" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="7f666c58-36c8-462d-85cc-ec11274eb87a" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="61.1">
+                        <om:Property Name="PortName" Value="CarSend" />
+                        <om:Property Name="MessageName" Value="CarOut" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="SendCarOut" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="da554c00-aaac-484b-a829-eceacd765d1c" ParentLink="Scope_Catch" LowerBound="64.1" HigherBound="70.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchSystemException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Send" OID="7248377f-8217-402d-9053-7525e90c4e2d" ParentLink="Catch_Statement" LowerBound="67.1" HigherBound="69.1">
+                            <om:Property Name="PortName" Value="ProcessingErrorNotification" />
+                            <om:Property Name="MessageName" Value="CarIn" />
+                            <om:Property Name="OperationName" Value="Operation_1" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="SendProcessingErrorNotification" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="8be1acc0-50b0-4e1a-8b51-ca919dfca323" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="14.1" HigherBound="16.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Chapter05_Example01.Orchestrations.PortType_1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CarReceive" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="cb01ec08-95d2-4816-9345-894296a8a6c7" ParentLink="PortDeclaration_CLRAttribute" LowerBound="14.1" HigherBound="15.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a6d475a9-d9d7-46e2-aab1-fb20b6dfb53b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="16.1" HigherBound="18.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="20" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Chapter05_Example01.Orchestrations.PortType_4" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShipNoticeRetract" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="6048ce91-6f3e-422c-9348-94719f0f7229" ParentLink="PortDeclaration_CLRAttribute" LowerBound="16.1" HigherBound="17.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="09d95154-fd88-456e-af11-3b72ca2ac52d" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="18.1" HigherBound="20.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="33" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Chapter05_Example01.Orchestrations.PortType_5" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ProcessingErrorNotification" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b7a60301-fbd8-40d7-b8f3-97e08f758ed8" ParentLink="PortDeclaration_CLRAttribute" LowerBound="18.1" HigherBound="19.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="fd137e65-5b88-4e3a-8188-51734aba3936" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="20.1" HigherBound="22.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="14" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Chapter05_Example01.Orchestrations.PortType_2" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ShipNoticeSend" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="a40dbf3d-db80-4425-8114-4e34c92f9cc7" ParentLink="PortDeclaration_CLRAttribute" LowerBound="20.1" HigherBound="21.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="2257b9ce-fbe3-4e2b-8667-31a7dfec392e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="22.1" HigherBound="24.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="29" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Chapter05_Example01.Orchestrations.PortType_3" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CarSend" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="74b315bc-b228-405f-b4a5-cc87a221a975" ParentLink="PortDeclaration_CLRAttribute" LowerBound="22.1" HigherBound="23.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="fce353ce-e215-49eb-b51b-6a7123801851" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_5" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5f099c01-0a60-423e-95cc-cb562c165ac4" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="b9440113-c653-4bb0-959f-5211102682d4" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.54">
+                    <om:Property Name="Ref" Value="Chapter05_Example01.Schemas.SimplifiedCar" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Chapter05_Example01.Orchestrations
+{
+    internal porttype PortType_5
+    {
+        oneway Operation_1
+        {
+            Chapter05_Example01.Schemas.SimplifiedCar
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service longrunning transaction ThrowCatchCompensate4
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_1 CarReceive;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_4 ShipNoticeRetract;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_5 ProcessingErrorNotification;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_2 ShipNoticeSend;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_3 CarSend;
+        message Chapter05_Example01.Schemas.SimplifiedCar CarIn;
+        message Chapter05_Example01.Schemas.SimplifiedCar CarOut;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3e8cea66-6135-438f-ad79-c9f9fbc25f52")]
+            activate receive (CarReceive.Operation_1, CarIn);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6f6c6aa3-2668-4669-98d9-febed6189506")]
+            scope longrunning transaction Transaction_3
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5c6486e0-ecf7-4411-aef9-392cb012d76e")]
+                    [Microsoft.XLANGs.BaseTypes.Transaction(Retry=true,Batch=true,Timeout=60,TranIsolationLevel=System.Data.IsolationLevel.Serializable)]
+                    scope atomic transaction Transaction_2
+                    {
+                        body
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b8737be1-6421-40af-b6b9-71da617573cd")]
+                            send (ShipNoticeSend.Operation_1, CarIn);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("bd3ce10d-3461-4895-897a-97c49526e3a9")]
+                        compensation ()
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("02f898ba-7c60-49dd-8696-a1f7e01d2af2")]
+                            send (ShipNoticeRetract.Operation_1, CarIn);
+                        }
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("62a49434-c165-4703-86d1-a2fa5d79b72f")]
+                    construct CarOut
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("3a6bf0f9-b485-4041-b343-7e303008124b")]
+                        CarOut = CarIn;
+                        CarOut.OperationalRange = Chapter05_Example01.HelperLibrary.CodeHelper.CalculateOperationalRange(CarIn.FuelTankCapacity, CarIn.FuelConsumption);
+                        
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("7f666c58-36c8-462d-85cc-ec11274eb87a")]
+                    send (CarSend.Operation_1, CarOut);
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("da554c00-aaac-484b-a829-eceacd765d1c")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7248377f-8217-402d-9053-7525e90c4e2d")]
+                        send (ProcessingErrorNotification.Operation_1, CarIn);
+                    }
+                }
+            }
+        }
+    }
+}
+

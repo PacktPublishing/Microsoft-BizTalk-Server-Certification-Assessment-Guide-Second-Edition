@@ -1,0 +1,7 @@
+<ns0:Car xmlns:ns0="http://Chapter02_Example01.Schemas.CarComponents">
+  <Components>
+    <Component Code="01" />
+    <Component Code="02" />
+    <Component Code="03" />
+  </Components>
+</ns0:Car>

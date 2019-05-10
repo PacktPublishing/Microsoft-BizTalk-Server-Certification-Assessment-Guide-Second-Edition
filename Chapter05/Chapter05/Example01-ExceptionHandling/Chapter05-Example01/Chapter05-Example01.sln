@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter05-Example01.Orchestrations", "Chapter05-Example01.Orchestrations\Chapter05-Example01.Orchestrations.btproj", "{738F9605-BF0A-4034-A4D2-DD5766392D62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter05-Example01.HelperLibrary", "Chapter05-Example01.HelperLibrary\Chapter05-Example01.HelperLibrary.csproj", "{28E99197-6380-4765-8954-A05DA96FB184}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter05-Example01.Schemas", "Chapter05-Example01.Schemas\Chapter05-Example01.Schemas.btproj", "{98AC606D-D6A3-45A8-AABE-C75589CAD916}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{738F9605-BF0A-4034-A4D2-DD5766392D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{738F9605-BF0A-4034-A4D2-DD5766392D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{738F9605-BF0A-4034-A4D2-DD5766392D62}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{738F9605-BF0A-4034-A4D2-DD5766392D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{738F9605-BF0A-4034-A4D2-DD5766392D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{738F9605-BF0A-4034-A4D2-DD5766392D62}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{28E99197-6380-4765-8954-A05DA96FB184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E99197-6380-4765-8954-A05DA96FB184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E99197-6380-4765-8954-A05DA96FB184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E99197-6380-4765-8954-A05DA96FB184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98AC606D-D6A3-45A8-AABE-C75589CAD916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98AC606D-D6A3-45A8-AABE-C75589CAD916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98AC606D-D6A3-45A8-AABE-C75589CAD916}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{98AC606D-D6A3-45A8-AABE-C75589CAD916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98AC606D-D6A3-45A8-AABE-C75589CAD916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98AC606D-D6A3-45A8-AABE-C75589CAD916}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

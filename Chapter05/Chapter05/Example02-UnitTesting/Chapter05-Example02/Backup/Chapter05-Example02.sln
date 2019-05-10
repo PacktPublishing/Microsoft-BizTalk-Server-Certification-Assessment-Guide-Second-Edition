@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter05-Example02.Schemas", "Chapter05-Example02.Schemas\Chapter05-Example02.Schemas.btproj", "{903E4324-C8FD-4954-A556-91AFA30078F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter05-Example02.Maps", "Chapter05-Example02.Maps\Chapter05-Example02.Maps.btproj", "{35687D93-8A3C-47FB-8493-768972E77FCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7854F4AA-6627-4F15-AAB6-B06E01790D78}"
+	ProjectSection(SolutionItems) = preProject
+		Chapter05-Example02.vsmdi = Chapter05-Example02.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{ADDFB319-375E-4285-B8EF-7912A796477C}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Chapter05-Example02.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{903E4324-C8FD-4954-A556-91AFA30078F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{903E4324-C8FD-4954-A556-91AFA30078F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{903E4324-C8FD-4954-A556-91AFA30078F4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{903E4324-C8FD-4954-A556-91AFA30078F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{903E4324-C8FD-4954-A556-91AFA30078F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{903E4324-C8FD-4954-A556-91AFA30078F4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{35687D93-8A3C-47FB-8493-768972E77FCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35687D93-8A3C-47FB-8493-768972E77FCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35687D93-8A3C-47FB-8493-768972E77FCD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{35687D93-8A3C-47FB-8493-768972E77FCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35687D93-8A3C-47FB-8493-768972E77FCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35687D93-8A3C-47FB-8493-768972E77FCD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{ADDFB319-375E-4285-B8EF-7912A796477C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADDFB319-375E-4285-B8EF-7912A796477C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADDFB319-375E-4285-B8EF-7912A796477C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADDFB319-375E-4285-B8EF-7912A796477C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

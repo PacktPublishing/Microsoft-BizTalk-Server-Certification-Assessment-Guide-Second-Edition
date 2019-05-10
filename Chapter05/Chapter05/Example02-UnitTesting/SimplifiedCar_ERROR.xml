@@ -1,0 +1,6 @@
+<ns0:Car xmlns:ns0="http://Chapter05_Example02.Schemas.SimplifiedCar">
+  <RegistrationNo>RegistrationNo_0</RegistrationNo>
+  <FuelTankCapacity>10</FuelTankCapacity>
+  <FuelConsumption>ERROR</FuelConsumption>
+  <OperationalRange>10</OperationalRange>
+</ns0:Car>

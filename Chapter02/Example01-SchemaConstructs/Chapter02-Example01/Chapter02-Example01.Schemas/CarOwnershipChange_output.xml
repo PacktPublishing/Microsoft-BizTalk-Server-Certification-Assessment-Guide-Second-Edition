@@ -1,0 +1,6 @@
+<ns0:CarOwnership xmlns:ns0="http://Chapter02_Example01.Schemas.CarOwnershipChange">
+  <PreviousOwnerEmail>Someone@Something.com</PreviousOwnerEmail>
+  <NewOwnerEmail>NewOwnerEmail_0</NewOwnerEmail>
+  <RegistrationNo>RegistrationNo_0</RegistrationNo>
+  <DateOfChange>1999-05-31</DateOfChange>
+</ns0:CarOwnership>

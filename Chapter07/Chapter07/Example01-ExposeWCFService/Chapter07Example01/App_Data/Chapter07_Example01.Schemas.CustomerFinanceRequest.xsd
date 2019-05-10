@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="http://Chapter07_Example01.Schemas.CustomerFinanceRequest" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://Chapter07_Example01.Schemas.CustomerFinanceRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CustomerFinanceRequest">
+    <xs:annotation>
+      <xs:appinfo />
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="CustomerName" type="xs:string" />
+        <xs:element name="CustomerCreditScore" type="xs:int" />
+        <xs:element name="FinanceAmount" type="xs:double" />
+        <xs:element name="Income" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

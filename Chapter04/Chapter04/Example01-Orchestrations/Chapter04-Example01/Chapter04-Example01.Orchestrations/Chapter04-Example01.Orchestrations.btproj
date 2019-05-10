@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21107</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{18400AB5-177C-4CC5-A934-6F95E3AE8CB0}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Chapter04_Example01.Orchestrations</RootNamespace>
+    <AssemblyName>Chapter04-Example01.Orchestrations</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>k.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chapter04-Example01.ClassLibrary\Chapter04-Example01.ClassLibrary.csproj">
+      <Project>{8F5CEF44-0769-47C8-AA2A-CF539BD3228E}</Project>
+      <Name>Chapter04-Example01.ClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="SalesOrderProcess.odx">
+      <TypeName>SalesOrderProcess</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+    <XLang Include="SpecifyNowProcess.odx">
+      <TypeName>SpecifyNowProcess</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="SalesOrder.xsd">
+      <TypeName>SalesOrder</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="k.snk" />
+    <Schema Include="PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations.PropertySchema</Namespace>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="SpecifyLaterProcess.odx">
+      <TypeName>SpecifyLaterOrchestration</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="DirectMessageBoxProcess.odx">
+      <TypeName>DirectMessageBoxProcess</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="DirectSelfCorrelatingParent.odx">
+      <TypeName>Copy_of_DirectMessageBoxProcess</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="DirectSelfCorrelatingChild.odx">
+      <TypeName>DirectSelfCorrelatingChild</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="DirectPartnerForwardReceiver.odx">
+      <TypeName>DirectPartnerForwardReceiver</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="DirectPartnerForwardSender1.odx">
+      <TypeName>DirectPartnerForwardSender1</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="DirectPartnerInverseSender.odx">
+      <TypeName>DirectPartnerInverseSender</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="DirectPartnerInverseReceiver1.odx">
+      <TypeName>DirectPartnerInverseReceiver1</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="DynamicSendPort.odx">
+      <TypeName>DynamicSendPort</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="CorrelationA.odx">
+      <TypeName>CorrelationA</TypeName>
+      <Namespace>Chapter04_Example01.Orchestrations</Namespace>
+    </XLang>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

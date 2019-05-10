@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="http://Chapter07_Example01.Schemas.CustomerFinanceResponse" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" targetNamespace="http://Chapter07_Example01.Schemas.CustomerFinanceResponse" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CustomerFinanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="isApproved" type="xs:boolean" />
+        <xs:element name="FinanceAmount" type="xs:string" />
+        <xs:element name="CustomerName" type="xs:string" />
+        <xs:element name="FinanceCompany" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

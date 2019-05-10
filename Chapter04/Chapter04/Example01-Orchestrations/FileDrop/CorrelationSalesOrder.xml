@@ -1,0 +1,12 @@
+<ns0:SO xmlns:ns0="http://Chapter04_Example01.Orchestrations.SalesOrder">
+  <Header>
+    <OrderNo>123</OrderNo>
+    <IssuedBy>MaMo01</IssuedBy>
+  </Header>
+  <Body>
+    <a>a</a>
+    <b>b</b>
+    <c>c</c>
+    <etc>etc</etc>
+  </Body>
+</ns0:SO>

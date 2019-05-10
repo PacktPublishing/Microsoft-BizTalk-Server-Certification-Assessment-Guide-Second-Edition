@@ -1,0 +1,112 @@
+#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="7274173c-1b86-441a-bdf8-a3905301d0e3" LowerBound="1.1" HigherBound="22.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Chapter03_Example01.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="22c8428f-9a42-418b-9f28-d46e51458f4c" ParentLink="Module_ServiceDeclaration" LowerBound="4.1" HigherBound="21.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CarSalesProcess" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="ServiceBody" OID="127c508c-70da-4da1-b5e9-8ab9c7777cfa" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Construct" OID="c92453f1-0c12-4592-92b3-c91af1218009" ParentLink="ServiceBody_Statement" LowerBound="13.1" HigherBound="19.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="cd79a3aa-f179-4add-9f43-9795a3948883" ParentLink="ComplexStatement_Statement" LowerBound="16.1" HigherBound="18.1">
+                        <om:Property Name="ClassName" Value="Chapter03_Example01.Orchestrations.MultiMsg_to_Car" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="e3f73d4c-d091-486b-a75c-6b67e4408775" ParentLink="Transform_InputMessagePartRef" LowerBound="17.87" HigherBound="17.96">
+                            <om:Property Name="MessageRef" Value="SimpleCar" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="279c11f7-f9e0-4ac6-838c-201a287933f4" ParentLink="Transform_InputMessagePartRef" LowerBound="17.98" HigherBound="17.105">
+                            <om:Property Name="MessageRef" Value="DMVData" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="8202b5bc-8852-40aa-8828-b1a0f35b8a05" ParentLink="Transform_InputMessagePartRef" LowerBound="17.107" HigherBound="17.121">
+                            <om:Property Name="MessageRef" Value="ValueAppraisal" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="e3cbbef8-cc1b-4ba6-8f1f-f045a7bf7be0" ParentLink="Transform_OutputMessagePartRef" LowerBound="17.28" HigherBound="17.31">
+                            <om:Property Name="MessageRef" Value="Car" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="ff84eae5-0847-4d59-b46d-227c5d6681a9" ParentLink="Construct_MessageRef" LowerBound="14.23" HigherBound="14.26">
+                        <om:Property Name="Ref" Value="Car" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e6316d9a-a439-4221-a487-7ca848cd31c9" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="7.1" HigherBound="8.1">
+                <om:Property Name="Type" Value="Chapter03_Example01_Schemas.Car" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Car" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="00984052-0109-4585-8e77-1452d62ff9a2" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="8.1" HigherBound="9.1">
+                <om:Property Name="Type" Value="Chapter03_Example01_Schemas.SimplifiedCar" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SimpleCar" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="82b0164d-0e14-4b96-8962-3c94e9610f3e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="9.1" HigherBound="10.1">
+                <om:Property Name="Type" Value="Chapter03_Example01_Schemas.CarDMVData" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="DMVData" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="349fa32a-d9af-4781-bbd6-82e4e53ebb39" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="Type" Value="Chapter03_Example01_Schemas.CarValueAppraisal" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ValueAppraisal" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Chapter03_Example01.Orchestrations
+{
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service CarSalesProcess
+    {
+        message Chapter03_Example01_Schemas.Car Car;
+        message Chapter03_Example01_Schemas.SimplifiedCar SimpleCar;
+        message Chapter03_Example01_Schemas.CarDMVData DMVData;
+        message Chapter03_Example01_Schemas.CarValueAppraisal ValueAppraisal;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c92453f1-0c12-4592-92b3-c91af1218009")]
+            construct Car
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("cd79a3aa-f179-4add-9f43-9795a3948883")]
+                transform (Car) = Chapter03_Example01.Orchestrations.MultiMsg_to_Car (SimpleCar, DMVData, ValueAppraisal);
+            }
+        }
+    }
+}
+

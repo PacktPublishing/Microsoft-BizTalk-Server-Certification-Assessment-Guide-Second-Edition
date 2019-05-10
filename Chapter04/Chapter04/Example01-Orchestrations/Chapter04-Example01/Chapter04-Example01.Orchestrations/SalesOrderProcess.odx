@@ -1,0 +1,185 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="1f427d37-435f-4389-9fb8-efb9f7f4c867" LowerBound="1.1" HigherBound="44.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Chapter04_Example01.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="cafda23c-8918-4490-b0a1-630523b9d367" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SOINPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="ef870bfc-5669-4e4e-b6b0-155d44f8a63e" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveSO" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="82a1aabe-6d2c-4c3d-af57-bd556869ec64" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.23">
+                    <om:Property Name="Ref" Value="Chapter04_Example01.Orchestrations.SalesOrder" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="04b9bc25-2147-4c66-8723-33a04d955983" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SOOUTPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e70b96b3-c833-4cbc-ad88-aafbe99a33d1" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendSO" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="248bc2ca-dcec-490e-9300-ad1e90561269" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.23">
+                    <om:Property Name="Ref" Value="Chapter04_Example01.Orchestrations.SalesOrder" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="45661033-7d2b-4bf8-80c0-48404c19d98e" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="43.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SalesOrderProcess" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="3b8fe34e-5ed5-4e02-82d6-cb05024fa49b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Chapter04_Example01.Orchestrations.SalesOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgSOIn" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="dc88e242-8bd3-4045-8dbb-3aced690bc9d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Chapter04_Example01.Orchestrations.SalesOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgSOOut" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="96b3398b-def2-4d10-9f47-fd7b4d66c6f9" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="c70857f6-af6c-4fc1-9495-e754e2569d09" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="SOIN" />
+                    <om:Property Name="MessageName" Value="msgSOIn" />
+                    <om:Property Name="OperationName" Value="ReceiveSO" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvSOIN" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="171e542f-3cf4-42b2-baa9-7b1afe46275c" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="39.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct SO" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="1cefe7c6-41d3-4eae-bba9-70359d5daabd" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="38.1">
+                        <om:Property Name="Expression" Value="msgSOOut = msgSOIn;&#xD;&#xA;msgSOOut.Header.IssuedBy = &#xD;&#xA;  Chapter04_Example01.ClassLibrary.ADHelper.GetFullname(msgSOIn.Header.IssuedBy);" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="CreateSOOut" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="4e1fa2f5-1b4f-4399-874e-8ef4ff44ab44" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.31">
+                        <om:Property Name="Ref" Value="msgSOOut" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="95a16c94-2317-4f1b-be1a-804b20b62f62" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="41.1">
+                    <om:Property Name="PortName" Value="SOOUT" />
+                    <om:Property Name="MessageName" Value="msgSOOut" />
+                    <om:Property Name="OperationName" Value="SendSO" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SndSOOut" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="19d81265-37f8-4cbd-9dbe-9bf59f0cef9d" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Chapter04_Example01.Orchestrations.SOINPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SOIN" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="62652ba7-8976-4dd4-adc1-c19eb4420aaf" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="3cfa6686-c532-4b23-b376-99724b97b8e3" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="16" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Chapter04_Example01.Orchestrations.SOOUTPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SOOUT" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="518ce426-6a0e-4fae-90dd-c2fb6396ee7f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Chapter04_Example01.Orchestrations
+{
+    internal porttype SOINPortType
+    {
+        oneway ReceiveSO
+        {
+            SalesOrder
+        };
+    };
+    internal porttype SOOUTPortType
+    {
+        oneway SendSO
+        {
+            SalesOrder
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service SalesOrderProcess
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements SOINPortType SOIN;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SOOUTPortType SOOUT;
+        message SalesOrder msgSOIn;
+        message SalesOrder msgSOOut;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c70857f6-af6c-4fc1-9495-e754e2569d09")]
+            activate receive (SOIN.ReceiveSO, msgSOIn);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("171e542f-3cf4-42b2-baa9-7b1afe46275c")]
+            construct msgSOOut
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("1cefe7c6-41d3-4eae-bba9-70359d5daabd")]
+                msgSOOut = msgSOIn;
+                msgSOOut.Header.IssuedBy = 
+                  Chapter04_Example01.ClassLibrary.ADHelper.GetFullname(msgSOIn.Header.IssuedBy);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("95a16c94-2317-4f1b-be1a-804b20b62f62")]
+            send (SOOUT.SendSO, msgSOOut);
+        }
+    }
+}
+

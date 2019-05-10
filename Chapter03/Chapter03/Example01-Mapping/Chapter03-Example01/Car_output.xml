@@ -1,0 +1,13 @@
+<ns0:Car xmlns:ns0="http://Chapter03_Example01.Schemas.Car">
+  <Style Code="Code_0" Color="Color_1" />
+  <Type Make="Make_0" Model="Model_1" />
+  <DateManufactured>1999-05-31</DateManufactured>
+  <DateRegistered>1999-05-31</DateRegistered>
+  <RegistrationNo>RegistrationNo_0</RegistrationNo>
+  <RecommendedPrice>10.4</RecommendedPrice>
+  <Components>
+    <Component Code="Code_0" />
+    <Component Code="Code_1" />
+  </Components>
+  <PassengerCapacity>10</PassengerCapacity>
+</ns0:Car>
